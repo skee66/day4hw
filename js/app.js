@@ -67,6 +67,32 @@ class Megaroster {
     this.removeClassName(li, 'template')
     this.setupActions(li, student)
 
+    //proceed at own risk. herein lies the shitshow
+   //const currObject = this
+    //let isBound = false
+
+    // $('div.student-name').on('dblclick', function() {
+    //     $(this).attr('contentEditable', true)
+    //     if (!isBound) {
+    //       isBound = true
+    //       $(this.on('blur', function() {
+    //         $(this).attr('contentEditable', false)
+    //           console.log($(this))
+    //           const index = currObject.students.findIndex((currentStudent) => {
+    //             console.log(currentStudent.name + "," + student.name)
+    //             console.log(currentStudent.id + "," + student.id)
+    //             return currentStudent.id === student.id
+    //           })
+
+    //           console.log(index)
+    //           currObject.students[index].name = $(this).attr('textContent')
+    //           currObject.save()
+
+    //           console.log(hasFired)
+    //           hasFired = true
+    //       })
+    //     }
+    // })
     return li
   }
 
@@ -83,10 +109,18 @@ class Megaroster {
     li
       .querySelector('button.move-down')
       .addEventListener('click', this.moveDown.bind(this, student))
+    li
+      .querySelector("[contenteditable]")
+      .addEventListener('blur', this.updateName.bind(this, student))
   }
 
   save() {
     localStorage.setItem('roster', JSON.stringify(this.students))
+  }
+
+  updateName(student, ev) {
+    student.name = ev.target.textContent
+    this.save()
   }
 
   moveUp(student, ev) {
