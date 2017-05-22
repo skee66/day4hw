@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Megaroster</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/app.css">
+  </head>
+  <body>
+    <div class="row">
+      <div class="medium-offset-2 medium-8 columns">
+        <h2>Megaroster</h2>
+        <form id="new-student">
+          <div class="input-group">
+            <input
+              class="input-group-field"
+              type="text"
+              name="studentName"
+              placeholder="Enter student name"
+              autofocus
+              required
+            >
+            <div class="input-group-button">
+              <button type="submit" class="success expanded button">Add Student</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-offset-2 medium-8 columns">
+        <ul id="student-list" class="no-bullet">
+          <li class="student template clearfix">
+            <div class="student-name"></div>
+            <span class="actions button-group">
+              <button type="button" class="remove alert button">
+                <i class="fa fa-trash-o"></i>
+              </button>
+              <button type="button" class="promote warning button">
+                <i class="fa fa-star"></i>
+              </button>
+              <button type="button" class="move-up button">
+                <i class="fa fa-arrow-up"></i>
+              </button>
+              <button type="button" class="move-down button">
+                <i class="fa fa-arrow-down"></i>
+              </button>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/what-input.js"></script>
+    <script src="js/vendor/foundation.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
